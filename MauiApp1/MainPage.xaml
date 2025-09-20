@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage"
+             Title="Daily Wellness Score">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <!-- Gender Selection -->
+            <Label Text="Select Gender" FontSize="20" HorizontalOptions="Center" />
+
+            <Grid ColumnDefinitions="*,*" HorizontalOptions="Center" ColumnSpacing="20">
+                <Border x:Name="MaleBorder"
+                        Stroke="Gray"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 20"
+                        BackgroundColor="White">
+                    <Image Source="male.png"
+                           HeightRequest="100"
+                           WidthRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnMaleTapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Border>
+
+                <Border x:Name="FemaleBorder"
+                        Stroke="Gray"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 20"
+                        Grid.Column="1"
+                        BackgroundColor="White">
+                    <Image Source="female.png"
+                           HeightRequest="100"
+                           WidthRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnFemaleTapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Border>
+            </Grid>
+
+            <!-- Sleep Hours -->
+            <Label Text="Sleep Hours (last night)" FontSize="18" />
+            <Slider x:Name="SleepSlider" Minimum="0" Maximum="12" Value="7" ValueChanged="OnSliderChanged"/>
+            <Label x:Name="SleepValueLabel" Text="7.0 h" FontSize="16" />
+
+            <!-- Stress Level -->
+            <Label Text="Stress Level" FontSize="18" />
+            <Slider x:Name="StressSlider" Minimum="0" Maximum="10" Value="4" ValueChanged="OnSliderChanged"/>
+            <Label x:Name="StressValueLabel" Text="4" FontSize="16" />
+
+            <!-- Activity Minutes -->
+            <Label Text="Activity Minutes (today)" FontSize="18" />
+            <Slider x:Name="ActivitySlider" Minimum="0" Maximum="120" Value="30" ValueChanged="OnSliderChanged"/>
+            <Label x:Name="ActivityValueLabel" Text="30 min" FontSize="16" />
+
+            <!-- Calculate Button 1101000588484770 -->
+            <Button Text="Calculate Wellness Score" 
+                    Clicked="OnCalculateClicked"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50" />
+
+            <!-- Results -->
+            <Border Stroke="Black" StrokeThickness="2" Padding="15" StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Spacing="10">
+                    <Label x:Name="ScoreLabel" Text="Score: --" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label x:Name="StatusLabel" Text="Status: --" FontSize="22" HorizontalOptions="Center" />
+                    <Label x:Name="RecommendationLabel" Text="Recommendations will appear here." FontSize="16" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
