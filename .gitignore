@@ -1,13 +1,15 @@
-# Build output
+# Ignore build output
 bin/
 obj/
 
-# VS/VS Code
+# VS / VS Code
 .vs/
 .vscode/
 
-# User/system files
+# User-specific
 *.user
 *.suo
-*.DS_Store
+*.userprefs
+*.db
 *.log
+.DS_Store
