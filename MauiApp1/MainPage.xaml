@@ -56,22 +56,13 @@
             <Slider x:Name="ActivitySlider" Minimum="0" Maximum="120" Value="30" ValueChanged="OnSliderChanged"/>
             <Label x:Name="ActivityValueLabel" Text="30 min" FontSize="16" />
 
-            <!-- Calculate Button 1101000588484770 -->
-            <Button Text="Calculate Wellness Score" 
-                    Clicked="OnCalculateClicked"
+            <!-- Navigate to Result Page -->
+            <Button Text="Go to Result Page" 
+                    Clicked="OnGoToResultClicked"
                     BackgroundColor="#4CAF50"
                     TextColor="White"
                     CornerRadius="10"
                     HeightRequest="50" />
-
-            <!-- Results -->
-            <Border Stroke="Black" StrokeThickness="2" Padding="15" StrokeShape="RoundRectangle 20">
-                <VerticalStackLayout Spacing="10">
-                    <Label x:Name="ScoreLabel" Text="Score: --" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" />
-                    <Label x:Name="StatusLabel" Text="Status: --" FontSize="22" HorizontalOptions="Center" />
-                    <Label x:Name="RecommendationLabel" Text="Recommendations will appear here." FontSize="16" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-                </VerticalStackLayout>
-            </Border>
 
         </VerticalStackLayout>
     </ScrollView>
